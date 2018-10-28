@@ -10,5 +10,6 @@ COPY entrypoint.sh entrypoint.sh
 
 ENV USERNAME NOBODY
 ENV PASSWORD CHANGEME
+ENV MEGACMD mega-put
 
 ENTRYPOINT bash ./entrypoint.sh
