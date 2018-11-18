@@ -15,5 +15,5 @@ if [ -d /upload ]; then
 else
     echo "Please mount the dir that you want to upload to /upload and set \$TARGET to remote dir. Aborting."
     exit 1
-	fi
+fi
 /bin/bash $@
