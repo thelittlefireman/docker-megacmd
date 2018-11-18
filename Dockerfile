@@ -13,3 +13,4 @@ ENV PASSWORD CHANGEME
 ENV MEGACMD mega-put
 
 ENTRYPOINT bash ./entrypoint.sh
+CMD /bin/bash
