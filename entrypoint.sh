@@ -12,5 +12,6 @@ if [[ "$MEGACMD" == "" ]]; then
 	
 else
 	$MEGACMD
+	exit 0
 fi
 /bin/bash $@
