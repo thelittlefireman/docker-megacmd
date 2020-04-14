@@ -9,9 +9,25 @@ fi
 if [[ "$MEGACMD" == "" ]]; then
 	echo "Please specify a valid -e MEGACMD command"
     	exit 1
-	
+elif [[ "$MEGACMD" == *"mega-sync"* ]]; then
+# specific to mega-cmd because not interactive ...
+	echo "specific actions for mega-sync"
+	not_sync="false"
+	$MEGACMD
+	sleep 10
+	while [ $not_sync == "false" ]
+	do
+		mega-sync
+		if mega-sync | grep -iq "Synced"; then
+			not_sync="true"
+			echo "Sync end"
+		fi
+		echo "$not_sync"
+		sleep 2
+	done
+	exit $?
 else
 	$MEGACMD
-	exit 0
+	exit $?
 fi
 /bin/bash $@
